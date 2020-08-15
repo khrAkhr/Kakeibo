@@ -5,58 +5,203 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
 
-    <Button
-        android:id="@+id/SettingsBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:text="@string/SettingsBtn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/NextMonthBtn"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="家計簿"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.022" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="家計簿"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="借方" />
 
-    <Button
-        android:id="@+id/PrevMonthBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="@string/PrevMonthBtn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/NextMonthBtn"
-        app:layout_constraintHorizontal_bias="0.65"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp">
 
-    <Button
-        android:id="@+id/NextMonthBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/NextMonthBtn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputKarikataHimoku"
+                android:layout_width="243dp"
+                android:layout_height="63dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputKarikataHimokuEdit"
+                    android:layout_width="274dp"
+                    android:layout_height="wrap_content"
+                    android:hint="費目"
+                    android:inputType="text"
+                    android:nextFocusForward="@+id/textInputKarikataKingaku"
+                    android:imeOptions="actionNext" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputKarikataKingaku"
+                android:layout_width="wrap_content"
+                android:layout_height="63dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputKarikataKingakuEdit"
+                    android:layout_width="274dp"
+                    android:layout_height="wrap_content"
+                    android:hint="金額"
+                    android:inputType="number"
+                    android:nextFocusForward="@+id/textInputKashikataHimoku"
+                    android:imeOptions="actionNext" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/addKarikata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="追加"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="貸方" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputKashikataHimoku"
+                android:layout_width="243dp"
+                android:layout_height="63dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputKashikataHimokuEdit"
+                    android:layout_width="274dp"
+                    android:layout_height="wrap_content"
+                    android:hint="費目"
+                    android:inputType="text"
+                    android:nextFocusForward="@+id/textInputKashikataKingaku"
+                    android:imeOptions="actionNext" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputKashikataKingaku"
+                android:layout_width="wrap_content"
+                android:layout_height="63dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputKashikataKingakuEdit"
+                    android:layout_width="274dp"
+                    android:layout_height="wrap_content"
+                    android:hint="金額"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/addKashikata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="追加"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputTekiyou"
+                android:layout_width="wrap_content"
+                android:layout_height="63dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputTekiyouEdit"
+                    android:layout_width="274dp"
+                    android:layout_height="wrap_content"
+                    android:hint="摘要"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/registerShiwake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="登録" />
+        </LinearLayout>
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <Button
+                    android:id="@+id/PrevMonthBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/PrevMonthBtn"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/NextMonthBtn"
+                    app:layout_constraintHorizontal_bias="0.65"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.916" />
+
+                <Button
+                    android:id="@+id/NextMonthBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/NextMonthBtn"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.916" />
+
+                <Button
+                    android:id="@+id/SettingsBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="52dp"
+                    android:text="@string/SettingsBtn"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/NextMonthBtn"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.916" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
